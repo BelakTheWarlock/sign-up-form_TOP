@@ -2,12 +2,75 @@
 <html>
 <head>
   <title>Document</title>
+  <script defer src="./main.js"></script>
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-  <div>
-    <h2>Faux</h2>
-    <h1>Bizzaria</h1>
-  </div>
+  <aside id="hero">
+    <header>
+      <div id="logo"></div>
+      <div id="header-text">
+        <span class="heading-top-text">Faux</span>
+        <span class="header-bottom-text">Bizzaria</span>
+      </div>
+    </header>
+    <img src="./imgs/house.jpg" />
+  </aside>
+  <main>
+    <p>Mission statement</p>
+    <div class="form-container">
+      <form method="post" action="#">
+	<div class="form-row">
+	  <div class="form-cell">
+	    <label for="fname">First Name: </label>
+	    <input id="fname"
+	           name="fname"
+	           type="text" />
+	  </div>
+	  <div class="form-cell">
+	    <label for="lname">Last Name: </label>
+	    <input id="lname"
+		   name="lname"
+		   type="text" />
+	  </div>
+	</div>
+	<div class="form-row">
+	  <div class="form-cell">
+	    <label for="mail">E-Mail: </label>
+	    <input id="mail"
+		   name="mail"
+		   type="email" />
+	  </div>
+	  <div class="form-cell">
+	    <label for="phone">Phone Number: </label>
+	    <input id="phone"
+		   name="phone"
+		   type="tel" />
+	  </div>
+	</div>
+	<div class="form-row">
+	  <div class="form-cell">
+	    <label for="pwd">Password: </label>
+	    <input id="pwd"
+		   name="pwd"
+		   type="password" />
+	  </div>
+	  <div class="form-cell">
+	    <label for="pwd-conf">Confirm Password: </label>
+	    <input id="pwd-conf"
+		   name="pwd-conf"
+		   type="password" />
+	  </div>
+	</div>
+	<div class="form-row">
+	  <div class="form-cell">
+	    <button>Create Account</button>
+	  </div>
+	</div>
+      </form>
+      <p>Already have an account? <a href="#">Log in</a>
+    </div>
+    <p>DISCLAIMER: This is not a real service. No data entered will not be saved.</p>
+  </main>
 </body>
 </html>

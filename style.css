@@ -1,8 +1,53 @@
 @font-face {
   font-family: "Babillon";
   src: url("./fonts/Babillon.ttf") format("truetype");
-  /* 
-   * Font by Letterseal-Studio
-   * https://www.1001fonts.com/users/Letterseal-Studio/ 
-   */
+}
+
+:root * {
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+}
+
+aside {
+  width: 72vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  /* Photo ratio is based on viewport height */
+  width: 72vh;
+  height: 100vh;
+}
+
+header {
+  width: 72vh;
+
+  display: flex;
+  justify-content: center;
+
+  position: absolute;
+  top: 175px;
+
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#header-text {
+  display: flex;
+  flex-direction: column;
+
+  color: #fff;
+  font-family: "Babillon";
+  font-size: 5rem;
+}
+
+main {
+  font-size: 2rem;
 }
