@@ -2,30 +2,26 @@
 <html>
 <head>
   <title>Document</title>
-  <script defer src="./main.js"></script>
   <link rel="stylesheet" href="./style.css" />
+  <script defer src="./main.js"></script>
 </head>
 <body>
-  <aside id="hero">
-    <header>
-      <div id="logo"></div>
-      <div id="header-text">
-        <span class="heading-top-text">Faux</span>
-        <span class="header-bottom-text">Bizzaria</span>
-      </div>
-    </header>
+  <header>
     <img src="./imgs/house.jpg" />
-  </aside>
+    <h1>Header</h1>
+  </header>
   <main>
-    <p>Mission statement</p>
-    <div class="form-container">
+    <div id="mission-statement">
+      <p>Sign up to see what is in<br />your future!</p>
+    </div>
       <form method="post" action="#">
 	<div class="form-row">
 	  <div class="form-cell">
-	    <label for="fname">First Name: </label>
+	    <label for="fname"><span class="required-input">*</span>First Name: </label>
 	    <input id="fname"
 	           name="fname"
-	           type="text" />
+	           type="text" 
+		   required />
 	  </div>
 	  <div class="form-cell">
 	    <label for="lname">Last Name: </label>
@@ -36,41 +32,42 @@
 	</div>
 	<div class="form-row">
 	  <div class="form-cell">
-	    <label for="mail">E-Mail: </label>
+	    <label for="mail"><span class="required-input">*</span>E-Mail: </label>
 	    <input id="mail"
 		   name="mail"
-		   type="email" />
+		   type="email" 
+		   required />
 	  </div>
 	  <div class="form-cell">
-	    <label for="phone">Phone Number: </label>
+	    <label for="phone"><span class="required-input">*</span>Phone Number: </label>
 	    <input id="phone"
 		   name="phone"
-		   type="tel" />
+		   type="tel" 
+		   required />
 	  </div>
 	</div>
 	<div class="form-row">
 	  <div class="form-cell">
-	    <label for="pwd">Password: </label>
+	    <label for="pwd"><span class="required-input">*</span>Password: </label>
 	    <input id="pwd"
 		   name="pwd"
-		   type="password" />
+		   type="password" 
+		   required />
 	  </div>
 	  <div class="form-cell">
-	    <label for="pwd-conf">Confirm Password: </label>
+	    <label for="pwd-conf"><span class="required-input">*</span>Confirm Password: </label>
 	    <input id="pwd-conf"
 		   name="pwd-conf"
-		   type="password" />
+		   type="password" 
+		   required />
 	  </div>
 	</div>
 	<div class="form-row">
-	  <div class="form-cell">
-	    <button>Create Account</button>
-	  </div>
+	  <button id="create-account-btn">Create Account</button>
+	  <p id="invalid-notice">Please fill in all necessary forms correctly</p>
 	</div>
       </form>
-      <p>Already have an account? <a href="#">Log in</a>
-    </div>
-    <p>DISCLAIMER: This is not a real service. No data entered will not be saved.</p>
+    <p class="already-a-member">Already have an account? <a href="#">Log in</a>
   </main>
 </body>
 </html>
