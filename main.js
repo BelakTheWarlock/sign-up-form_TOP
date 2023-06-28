@@ -8,6 +8,7 @@ function verifyMatchingPassword() {
   }
 } 
 
+// Implements password matching
 let pwd = document.querySelector('#pwd');
 let pwd_conf = document.querySelector('#pwd-conf');
 let pwd_match = false;
@@ -15,29 +16,31 @@ pwd_conf.addEventListener('keyup', (event) => {
   verifyMatchingPassword();
 });
 
+// To show the unfinished input
 let form_input = document.querySelectorAll('form input');
 form_input.forEach( input => {
+  input.addEventListener('keyup', () => {
+    if (!input.id === 'pwd-conf') {
+      if (input.checkValidity()) input.style.borderColor = 'green';
+      else input.style.borderColor = 'red';
+    }
+  });
+  
   input.addEventListener('click', () => input.classList = 'was-clicked');
 });
 
 document.querySelector('#create-account-btn').addEventListener('click', (event) => {
-  let found_invalid = false;
   form_input.forEach( input => {
-    if (!input.checkValidity()) {
+    if(!input.checkValidity()) {
+      event.preventDefault();
       input.style.borderColor = 'red';
-      found_invalid = true;
-      input.addEventListener('blur', () => {
-        if (input.checkValidity()) {
-		// Needs some fixin'
-	  input.style.borderColor = 'green';
-        }
-      });
+      document.querySelector('#invalid-notice').style.display = 'block';
     }
   });
-  if (!pwd_match) found_invalid = true;
-  
-  if (found_invalid) {
+
+  if (!pwd_match) {
     event.preventDefault();
+    pwd_conf.style.borderColor = 'red';
     document.querySelector('#invalid-notice').style.display = 'block';
   }
 });
